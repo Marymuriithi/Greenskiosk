@@ -1,4 +1,4 @@
-{% for product in product_image %}
+{% for product in products %}
 <img src="{{product.image.url}}">
     <h3>{{ product.title }} - {{product.kiosk.currency}}{{product.selling_price}}</h3>
     <p> {{ product.description }} </p>

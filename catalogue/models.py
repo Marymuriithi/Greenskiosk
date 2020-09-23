@@ -10,7 +10,7 @@ class ProductSupplier(models.Model):
         ("f", "female")
 
     )
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE,null=True)
     user = models.CharField(max_length=28)
     phone_number = models.IntegerField()
     street_address = models.CharField(max_length=100)
@@ -34,13 +34,12 @@ class ProductCategory(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=30)
     description = models.TextField(max_length=200)
-    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE )
+    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE,null=True)
     supplier_price = models.DecimalField(max_digits=6,decimal_places=2)
     selling_price = models.DecimalField(max_digits=6,decimal_places=2)
-    supplier = models.ForeignKey(ProductSupplier, on_delete=models.CASCADE)
+    supplier = models.ForeignKey(ProductSupplier, on_delete=models.CASCADE,null=True)
     number_in_stock = models.IntegerField()
     product=models.ImageField(upload_to='images/')
-    image = models.ImageField(upload_to='galary/')
     
     def __str__(self):
         return self.title
