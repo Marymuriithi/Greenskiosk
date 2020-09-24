@@ -39,7 +39,7 @@ class Product(models.Model):
     selling_price = models.DecimalField(max_digits=6,decimal_places=2)
     supplier = models.ForeignKey(ProductSupplier, on_delete=models.CASCADE,null=True)
     number_in_stock = models.IntegerField()
-    product=models.ImageField(upload_to='images/')
+    product=models.ImageField(upload_to='images')
     
     def __str__(self):
         return self.title

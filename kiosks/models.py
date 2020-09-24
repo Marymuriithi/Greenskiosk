@@ -28,4 +28,4 @@ class Kiosk(models.Model):
     business_type = models.CharField(max_length=28)
 
     def __str__(self):
-        return self.name()
+        return self.name

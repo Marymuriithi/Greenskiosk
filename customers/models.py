@@ -15,14 +15,18 @@ class Customer(models.Model):
     phone_number = models.IntegerField()
     date_of_birth = models.DateField()
     id_number = models.IntegerField()
-    email = models.EmailField(max_length=12)
+    email = models.EmailField(max_length=25)
 
     def __str__(self):
-        return self.customer()
+        return self.gender()
 
 
 class ShippingAddress(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE) 
     address = models.CharField(max_length=10)   
     notes = models.TextField(max_length=100)
+
+    def __str__(self):
+        return self.address()
+
 

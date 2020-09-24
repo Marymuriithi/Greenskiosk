@@ -1,5 +1,156 @@
-{% for product in products %}
-<img src="{{product.image.url}}">
-    <h3>{{ product.title }} - {{product.kiosk.currency}}{{product.selling_price}}</h3>
-    <p> {{ product.description }} </p>
-{% endfor %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags --> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Greens Kiosk!</title>
+  </head>
+    <div>
+        <h1>Greens Kiosk!</h1>
+    </div>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="joy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRoGXMD_iE1pHSWFtnqzQtmU8uhCrCVG8LYFg&usqp=CAU" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="mary" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTcW_93d1QQZOiiBcIgdpYgz_TcqW6x0G7hKw&usqp=CAU" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="esther" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRCProFfQ5nhBkp7LvOh-dMB4Fl2e5WEojiQw&usqp=CAU" alt="Third slide">
+                  </div>
+                  <div class="content">
+                    <p>WARM WELCOME TO THIS SITE, SHOP, BUY AND YOU OWN IT!</p>
+                  </div>
+                </div>
+              </div> 
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
+   <div class="container">
+     <div class="row">
+       
+        {% for product in products %}
+        <div class="col-lg-4">
+        <img class="conte" src="{{product.product.url}}" alt="">
+        <p><a href="/products/{{product.id}}">
+            <h3 class="cont">{{ product.title }}</h3> 
+              <h4 class="co"> {{product.kiosk.currency}} </h4>
+               <h4 class="co"> {{product.selling_price}}</h4>
+               <h4 class="co"> {{ product.description }}</h4></a></p>
+            <button class="btn">Add To Cart</button>
+            </div>
+        {% endfor %}
+        </div>
+    <style>
+        h1{
+            background-color:darkolivegreen;
+            text-align: center;
+            font-size: 40px;
+            color: white;
+        }
+        .content{
+          text-align: center;
+          color: olivedrab;
+          font-size: 30px;
+        }
+        .content:hover{
+          background-color: crimson;
+          block-size: 30px;
+        }
+        
+        .joy{
+            height: 400px;
+            width: 500px;
+            margin-left: 400px;
+            margin-right: 300px;
+            
+            
+
+         }
+        .mary{
+            height: 400px;
+            width: 500px;
+            margin-left: 400px;
+            margin-right: 300px;
+
+        }
+        .esther{
+            height: 400px;
+            width: 500px;
+            margin-left: 400px;
+            margin-right: 300px;
+        } 
+        /* body{
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+} */
+.container{
+    /* background-color: greenyellow; */
+    padding:50px ;
+    text-align: center;
+    margin-right:0;
+    margin-left: 50px;
+   
+}
+.conte{
+    text-align: justify;
+    display: flex;
+    height: 250px;
+    width: 400px;
+    padding-left: 100px;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+.cont{
+  padding-left: 100px;
+  font-size: 20px;
+  font-weight: bold;
+  
+
+}
+.con{
+  padding-left: 100px;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+.btn{
+  margin-left: 100px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: olivedrab;
+  border-radius: 8px;
+
+}
+.btn:hover{
+  background-color: crimson;
+}
+p{
+  padding-left: 100px;
+  font-size: 20px;
+  font-weight: bold;
+  
+}
+.co{
+  padding-left: 100px;
+  font-size: 20px;
+  font-weight: bold; 
+  color:black;
+  }
+
+        
+    </style>
+</body>
+</html> 
