@@ -1,9 +1,11 @@
+from django.contrib import admin
 from django.urls import path
-from .import views
-from .views import product_list
-from .views import upload_product
-
+from .views import product_list, product_details, upload_products
 urlpatterns = [
-    path('products/', product_list, name='product-list'),
-    path("products/upload/", upload_product, name="product-uploads")
+    # path('admin/', admin.site.urls),
+    path("", product_list, name="product_list"),
+    path("products/<int:product_id>/", product_details, name="details"),
+    path("products/upload/", upload_products, name="upload")
+    
 ]
+    

@@ -1,17 +1,27 @@
-from django.shortcuts import render
-from  .models import Product
-from .import views
-# from .views import product_list
-
-# Create your views here.
-
-
+from django.shortcuts import render, redirect
+from .forms import ProductForm
+from .models import Product
 def product_list(request):
     products = Product.objects.all()
-    return render(request, 'product_list.html', {'products': products})
+    return render(request, 'product_list.html', {'products':products})
 
-def upload_product(request):
+def product_details(request, product_id):
+    product = Product.objects.filter(id=product_id)
+    # images = product.images.all()
+    return render(request, 'product_details.html', {'product':product})
+
+def upload_products(request):
     form = ProductForm()
-    return render(request, 'upload_product.html', {'form': form})
-    
-                                                                                     
+    if request.method == "POST":
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+        return redirect('products_list')
+    else:
+        form = ProductForm
+    return render(request, 'upload_products.html', {'form': form} )
+
+
+
+
+

@@ -18,7 +18,7 @@ class Customer(models.Model):
     email = models.EmailField(max_length=25)
 
     def __str__(self):
-        return self.gender()
+        return self.gender
 
 
 class ShippingAddress(models.Model):

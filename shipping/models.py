@@ -12,7 +12,7 @@ class ShippingProvider(models.Model):
     transport_mode = models.CharField(max_length=10)
 
     def __str__(self):
-        return self.Shipping_Provider()
+        return self.name
 
 
 class DispenserCoolerBox(models.Model):
@@ -21,16 +21,13 @@ class DispenserCoolerBox(models.Model):
     unlock_code = models.IntegerField()
 
     def __str__(self):
-        return self.box()
+        return self.box
 
 
 class Delivery(models.Model):
-    # order = models.ForeignKey(Order, on_delete=models.CASCADE)
     dispatch_time = models.DateTimeField()
-    # shipping = models.ForeignKey(ShippingProvider)
-    # cooler_box = models.ForeignKey()
 
     def __str__(self):
-        return self.delivery()
+        return self.dispatch_time
 
 
