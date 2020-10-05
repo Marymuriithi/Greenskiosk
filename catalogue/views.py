@@ -7,7 +7,7 @@ def product_list(request):
 
 def product_details(request, product_id):
     product = Product.objects.filter(id=product_id)
-    # images = product.images.all()
+   # images = product.images.all()
     return render(request, 'product_details.html', {'product':product})
 
 def upload_products(request):
@@ -19,7 +19,20 @@ def upload_products(request):
         return redirect('products_list')
     else:
         form = ProductForm
-    return render(request, 'upload_products.html', {'form': form} )
+    return render(request, 'upload_product.html', {'form': form} )
+
+def add_to_cart(request, product_id):
+    cart = request.session.get('cart', {})
+    product = Product.objects.get(id=product_id)
+    cart[product_id] = product
+    request.session['cart'] = cart
+    return HttpResponseRedirect(reverse("cart"))
+
+
+# Cart View
+def get_cart(request):
+    cart = request.session.get('cart',{})
+    return render(request, 'buylist/add_to_cart.html', cart)
 
 
 

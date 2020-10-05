@@ -1,0 +1,31 @@
+{% for item in file %}
+    <tbody>
+      <tr>
+        <td>{{item.fields.Name}}</td>
+        <td>${{item.fields.Price}}</td>
+        <td>{{item.fields.Quantity}}</td>
+        <td>
+            <a href="http://127.0.0.1:8000/cart/{{item.id}}"><button>Add</button></a>      
+        </td>
+
+      </tr>
+    </tbody>
+    {% endfor %}
+
+<!-- <h1>Your Cart</h1>
+
+{% for a in cart.products.all %}
+<form action="{% url "cart:update" %}" method="POST">{% csrf_token %}
+
+<input type="hidden" name="product_id" value='{{a.id}}' placeholder="
+ {{a.id}}"/>
+
+<h4>Your Product: <a href= '{{ a.get_absolute_url}}'>{{a.title}}</a><small>
+<br><button type="submit">Remove?</button></small></h4>
+<p>Price :
+
+{{a.price}}</p>
+</form>
+{% endfor %}
+
+<b>Subtotal: {{cart.subtotal}}</b><br> -->
