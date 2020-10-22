@@ -21,3 +21,19 @@ Django comes with a full-featured and secure authentication system. It handles u
 
 
 
+# Running this project
+First you need to create a Virtual Environment by using 
+  python -m venv env1
+  
+The above command creates a virtual environment where Django will be installed
+
+To activate our virtual environment
+  source env/bin/activate
+  
+Then install the project dependencies with
+  pip install -r requirements.txt
+  
+Now you can run the project with this command
+  python manage.py runserver
+  
+# Note  if you want payments to work you will need to enter your own Stripe API keys into the .env file in the settings files.
