@@ -38,3 +38,9 @@ Now you can run the project with this command
 #  python manage.py runserver
   
  Note : if you want payments to work you will need to enter your own Stripe API keys into the .env file in the settings files.
+ 
+ # Follow the tutorial
+ Here are some of the links that have helped in this project.
+ https://docs.djangoproject.com/en/3.1/intro/tutorial03/
+ https://docs.djangoproject.com/en/3.1/topics/forms/
+ https://docs.djangoproject.com/en/3.1/topics/templates/
